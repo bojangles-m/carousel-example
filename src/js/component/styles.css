@@ -1,0 +1,101 @@
+.slides {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s ease 0.4s;
+
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+  }
+
+  .author {
+    text-align: center;
+    margin: 25px 80px;
+  }
+}
+
+.panel {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.navigation {
+  float: left;
+  margin: 0 10px;
+}
+
+.item {
+  position: relative;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin: 5px 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: transparent;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+    height: 10px;
+    width: 10px;
+    background-color: #ffc3c3;
+    margin: auto;
+    border-radius: 50px;
+    transition: background-color 1s ease 0.1s;
+  }
+
+  &.active::after {
+    background-color: #ff0000;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: #fdebeb8c;
+  }
+}
+
+.controls {
+  float: right;
+
+  button {
+    background: none;
+    border: 0;
+    height: 24px;
+    width: 28px;
+    cursor: pointer;
+  }
+}
+
+.ppButton {
+  background: none;
+  border: 0;
+}
+.prev {
+  transform: rotate(180deg);
+}
+
+.progressBar {
+  clear: both;
+  & > div {
+    background-color: #fbe0e0ab;
+    height: 20px;
+  }
+}
+
+.clearBefore::before,
+.clearAfter::after,
+.clearFix {
+  clear: both;
+  content: '';
+  display: table;
+  height: 0;
+}
